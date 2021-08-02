@@ -15,7 +15,7 @@ function UpdateEmployeeComponent() {
     //grab employee info from DB on load
     useEffect(() => {
         try {
-            fetch(`/api/v1/employees/${id1}`, {
+            fetch(`https://spring-boot-api2.herokuapp.com/api/v1/employees/${id1}`, {
                 method: "get", headers: {
                     "Content-Type": "application/json",
                 },
@@ -39,7 +39,7 @@ function UpdateEmployeeComponent() {
         console.log(firstName, lastName, emailId)
 
         try {
-            fetch(`/api/v1/employees/${id1}`, {
+            fetch(`https://spring-boot-api2.herokuapp.com/api/v1/employees/${id1}`, {
                 method: "put", headers: {
                     "Content-Type": "application/json",
                 },

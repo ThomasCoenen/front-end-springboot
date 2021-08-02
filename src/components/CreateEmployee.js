@@ -15,7 +15,7 @@ export default function CreateEmployee() {
         e.preventDefault();
 
         try {
-            fetch(`/api/v1/employees`, {
+            fetch(`https://spring-boot-api2.herokuapp.com/api/v1/employees`, {
                 method: "post", headers: {
                     "Content-Type": "application/json",
                 },

@@ -8,7 +8,7 @@ function ListEmployeeComponent() {
 
     function getEmployees() {
         try {
-            fetch(`/api/v1/employees`, {
+            fetch(`https://spring-boot-api2.herokuapp.com/api/v1/employees`, {
                 method: "get", headers: {
                     "Content-Type": "application/json",
                 },
@@ -26,7 +26,7 @@ function ListEmployeeComponent() {
     const deleteEmployee = (emp) => {
         console.log('emp:', emp)
         try {
-            fetch(`/api/v1/employees/${emp.id}`, {
+            fetch(`https://spring-boot-api2.herokuapp.com/api/v1/employees/${emp.id}`, {
                 method: "delete", headers: {
                     "Content-Type": "application/json",
                 },

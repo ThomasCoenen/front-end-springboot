@@ -9,7 +9,7 @@ export default function ViewEmployee() {
     //grab employee info from DB on load
     useEffect(() => {
         try {
-            fetch(`/api/v1/employees/${id}`, {
+            fetch(`https://spring-boot-api2.herokuapp.com/api/v1/employees/${id}`, {
                 method: "get", headers: {
                     "Content-Type": "application/json",
                 },

@@ -4,11 +4,18 @@
 //git add .
 //heroku git:remote -a spring-frontend1
 //git commit -m "make it better"
-//git push heroku main
+//git push heroku master
 
 //git add *
 //git commit -m "make it better"
 //git push -f heroku master
+
+// git init
+// git add README.md
+// git commit -m "first commit"
+// git branch -M main
+// git remote add origin https://github.com/ThomasCoenen/front-end-springboot.git
+// git push -u origin main
 
 
 import logo from './logo.svg';
