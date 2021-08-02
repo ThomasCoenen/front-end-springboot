@@ -10,6 +10,7 @@ export default function ViewEmployee() {
     useEffect(() => {
         try {
             fetch(`https://spring-boot-api2.herokuapp.com/api/v1/employees/${id}`, {
+                //fetch(`/api/v1/employees/${id}`, {
                 method: "get", headers: {
                     "Content-Type": "application/json",
                 },
@@ -30,18 +31,18 @@ export default function ViewEmployee() {
             <br></br>
             <div className="card col-md-6 offset-md-3">
                 <h3 className="text-center"> View Employee Details</h3>
-                <div className="card-body">
-                    <div className="row">
-                        <label> Employee First Name: </label>
-                        <div> {employee.firstName}</div>
+                <div className="card-body viewCont">
+                    <div className="viewEmpContIndiv">
+                        <label> Employee First Name:  </label>
+                        <div>&nbsp; {employee.firstName}</div>
                     </div>
-                    <div className="row">
-                        <label> Employee Last Name: </label>
-                        <div> {employee.lastName}</div>
+                    <div className="viewEmpContIndiv">
+                        <label> Employee Last Name:  </label>
+                        <div>&nbsp; {employee.lastName}</div>
                     </div>
-                    <div className="row">
-                        <label> Employee Email ID: </label>
-                        <div> {employee.emailId}</div>
+                    <div className="viewEmpContIndiv">
+                        <label> Employee Email ID:  </label>
+                        <div>&nbsp; {employee.emailId}</div>
                     </div>
                 </div>
 

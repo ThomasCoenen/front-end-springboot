@@ -17,8 +17,23 @@
 // git remote add origin https://github.com/ThomasCoenen/front-end-springboot.git
 // git push -u origin main
 
+//npm run build
 
-import logo from './logo.svg';
+
+// //const { createProxyMiddleware } = require('http-proxy-middleware');
+
+// import { createProxyMiddleware } from 'http-proxy-middleware';
+
+
+// module.exports = function (app) {
+//     app.use(
+//         createProxyMiddleware(["/api", "/otherApi"], { target: "http://localhost:8080" })
+//     );
+// };
+
+
+
+//import logo from './logo.svg';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import './App.css';
 import ListEmployeeComponent from './components/ListEmployeeComponent';
@@ -43,7 +58,7 @@ function App() {
         </Switch>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
 
     </BrowserRouter>
   );

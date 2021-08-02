@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
 import { Link, useHistory, useParams } from 'react-router-dom'
 
 function ListEmployeeComponent() {
@@ -9,6 +8,7 @@ function ListEmployeeComponent() {
     function getEmployees() {
         try {
             fetch(`https://spring-boot-api2.herokuapp.com/api/v1/employees`, {
+                //fetch(`/api/v1/employees`, {
                 method: "get", headers: {
                     "Content-Type": "application/json",
                 },
@@ -27,6 +27,7 @@ function ListEmployeeComponent() {
         console.log('emp:', emp)
         try {
             fetch(`https://spring-boot-api2.herokuapp.com/api/v1/employees/${emp.id}`, {
+                //fetch(`/api/v1/employees/${emp.id}`, {
                 method: "delete", headers: {
                     "Content-Type": "application/json",
                 },
@@ -61,8 +62,9 @@ function ListEmployeeComponent() {
     return (
         <div>
             <h2 className='text-center'>Employees List</h2>
-            <div className='row'>
-                <button className="btn btn-primary" onClick={addEmployee}>Add Employee</button>
+            <div className='centered'>
+                {/* <button className="addEmpButton" onClick={addEmployee}>Add Employee</button> */}
+                <button className="btn btn-primary addEmpButton" onClick={addEmployee}>Add Employee</button>
             </div>
 
             <div className='row'>
@@ -70,11 +72,11 @@ function ListEmployeeComponent() {
 
                     <thead>
                         <tr>
-                            <th>Emp ID</th>
-                            <th>Emp First Name</th>
-                            <th>Emp Last Name</th>
-                            <th>Emp Email</th>
-                            <th>Emp Actions</th>
+                            <th>Employee ID</th>
+                            <th>Employee First Name</th>
+                            <th>Employee Last Name</th>
+                            <th>Employee Email</th>
+                            <th>Employee Actions</th>
                         </tr>
                     </thead>
 

@@ -16,6 +16,7 @@ function UpdateEmployeeComponent() {
     useEffect(() => {
         try {
             fetch(`https://spring-boot-api2.herokuapp.com/api/v1/employees/${id1}`, {
+                //fetch(`/api/v1/employees/${id1}`, {
                 method: "get", headers: {
                     "Content-Type": "application/json",
                 },
@@ -40,6 +41,7 @@ function UpdateEmployeeComponent() {
 
         try {
             fetch(`https://spring-boot-api2.herokuapp.com/api/v1/employees/${id1}`, {
+                //fetch(`/api/v1/employees/${id1}`, {
                 method: "put", headers: {
                     "Content-Type": "application/json",
                 },

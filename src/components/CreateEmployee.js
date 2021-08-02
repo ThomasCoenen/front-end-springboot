@@ -1,21 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useHistory, useParams } from 'react-router-dom'
-import axios from 'axios'
 
 export default function CreateEmployee() {
     let [firstName, setFirstName] = useState("");
     let [lastName, setLastName] = useState("");
     let [emailId, setEmailId] = useState("");
-
-    let [id, setId] = useState("");
-    let [name, setName] = useState("");
-    let [description, setDescription] = useState("");
+    let [loading, setLoading] = useState(false);
 
     const submitHandler = (e) => {
         e.preventDefault();
+        setLoading(true)
 
         try {
             fetch(`https://spring-boot-api2.herokuapp.com/api/v1/employees`, {
+                //fetch(`/api/v1/employees`, {
                 method: "post", headers: {
                     "Content-Type": "application/json",
                 },
@@ -25,7 +23,20 @@ export default function CreateEmployee() {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log('dataAction:', data)
+                    console.log('dataAction:', data.id)
+                    if (data.id) {
+                        alert("Employee created!")
+                        //setLoading(false)
+                        setFirstName("")
+                        setLastName("")
+                        setEmailId("")
+                    } else {
+                        alert("That email already exists")
+                    }
+                    setLoading(false)
+                    // setFirstName("")
+                    // setLastName("")
+                    // setEmailId("")
                 })
         } catch (error) {
             // dispatch({type: GET_EMPLOYEES_FAIL, payload: error.message})
@@ -58,7 +69,7 @@ export default function CreateEmployee() {
                                             value={emailId} onChange={e => setEmailId(e.target.value)} />
                                     </div>
 
-                                    <button className="btn btn-success" type="submit">Save</button>
+                                    <button className="btn btn-success" disabled={loading} type="submit">Save</button>
                                 </form>
                             </div>
                         </div>

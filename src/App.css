@@ -1,42 +1,16 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header{
+  display:grid;
+  align-items:center;
+  background-color:#053E6F;
+  height:50px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.homeLinkCont{
+  /* display:grid; */
+  padding-left: 20px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .footer{
   position: absolute;
   bottom: 0;
@@ -45,4 +19,21 @@
   background-color: black;
   text-align: center;
   color: white;
+}
+.centered{
+  display:grid;
+  justify-items: center;
+  padding-bottom: 10px;
+}
+.addEmpButton{
+  width:220px;
+  border-radius: 9px;
+  /* color:blue; */
+}
+.viewCont{
+  display:grid;
+  justify-content: center;
+}
+.viewEmpContIndiv{
+  display: flex;
 }
