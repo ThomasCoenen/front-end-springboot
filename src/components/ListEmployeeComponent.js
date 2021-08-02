@@ -16,7 +16,14 @@ function ListEmployeeComponent() {
                 .then(res => res.json())
                 .then(data => {
                     console.log('dataAction:', data)
-                    setEmployees(data)
+
+                    if (Array.isArray(data) && data.length > 0) {
+                        console.log('its an array')
+                        setEmployees(data)
+                    } else {
+                        console.log('not an array')
+                    }
+
                 })
         } catch (error) {
             // dispatch({type: GET_EMPLOYEES_FAIL, payload: error.message})
@@ -63,7 +70,6 @@ function ListEmployeeComponent() {
         <div>
             <h2 className='text-center'>Employees List</h2>
             <div className='centered'>
-                {/* <button className="addEmpButton" onClick={addEmployee}>Add Employee</button> */}
                 <button className="btn btn-primary addEmpButton" onClick={addEmployee}>Add Employee</button>
             </div>
 
@@ -81,7 +87,7 @@ function ListEmployeeComponent() {
                     </thead>
 
                     <tbody>
-                        {
+                        {/* {
                             employees.map(emp => (
                                 <tr key={emp.id}>
                                     <td>{emp.id}</td>
@@ -92,10 +98,34 @@ function ListEmployeeComponent() {
                                         <button className="btn btn-info" onClick={() => updateEmployee(emp.id)}>Update</button>
                                         <button className="btn btn-danger" onClick={() => deleteEmployee(emp)} style={{ marginLeft: "10px" }}>Delete</button>
                                         <button className="btn btn-info" onClick={() => viewEmployee(emp.id)} style={{ marginLeft: "10px" }}>View</button>
-                                        {/* <button className="btn btn-info" onClick={() => updateEmployee(emp.id)} style={{ marginLeft: "10px" }}>View</button> */}
                                     </td>
                                 </tr>
                             ))
+                        } */}
+
+                        {
+                            employees.length > 0 ? (
+
+                                employees.map(emp => (
+                                    <tr key={emp.id}>
+                                        <td>{emp.id}</td>
+                                        <td>{emp.firstName}</td>
+                                        <td>{emp.lastName}</td>
+                                        <td>{emp.emailId}</td>
+                                        <td>
+                                            <button className="btn btn-info" onClick={() => updateEmployee(emp.id)}>Update</button>
+                                            <button className="btn btn-danger" onClick={() => deleteEmployee(emp)} style={{ marginLeft: "10px" }}>Delete</button>
+                                            <button className="btn btn-info" onClick={() => viewEmployee(emp.id)} style={{ marginLeft: "10px" }}>View</button>
+                                        </td>
+                                    </tr>
+                                ))
+
+                            )
+
+                                : (
+                                    <></>
+                                )
+
                         }
 
                     </tbody>
@@ -103,7 +133,7 @@ function ListEmployeeComponent() {
                 </table>
             </div>
 
-        </div>
+        </div >
     )
 }
 
